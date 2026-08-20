@@ -31,4 +31,5 @@ UPDATE students SET student_created_at = CURRENT_TIMESTAMP WHERE student_created
 ALTER TABLE students MODIFY COLUMN student_created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
 
 show TABLES
+Select * from
 describe students
