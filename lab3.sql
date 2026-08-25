@@ -11,7 +11,7 @@ INSERT INTO books (book_title, book_author, book_publisher, book_year) VALUES
      ("Life-Study of Exodus","Witness Lee","Study of the Bible", 2001),
      ("Life-Study of Acts","Witness Lee","Spiritual Growth", 2002),
 
-CRREATE TABLE borrow(
+CREATE TABLE borrow(
         borrow_id INT AUTO_INCREMENT PRIMARY KEY,
         student_id INT NOT NULL,
         book_id INT NOT NULL,
@@ -22,11 +22,38 @@ CRREATE TABLE borrow(
         CONSTRAINT fk_borrow_student FOREIGN KEY (student_id)
           REFERENCES students(student_id) ,
 
-          CONSTRAINT fk_borrow_student FOREIGN KEY (book_id)
+          CONSTRAINT fk_borrow_book FOREIGN KEY (book_id)
             REFERENCES books(book_id)
 );
 
-INSERT INTO borrrow (student_id,book_id) VALIUES
+INSERT INTO borrow (student_id,book_id) VALUES
 (1,2),
 (2,1),
 (3,3);
+
+
+SELECT
+     br.borrow_id,
+
+     s.student_id,
+     CONTACT(
+        s.student_first_name,
+        '',
+        s.student_last_name
+     ) as student_name,
+     s.student_course,
+
+     b.book_tiitle,
+     b.book_author,
+     b.book_category,
+
+     br.borrow_date,
+     FROM borrow br
+     JOIN student s ON,
+       br.student_id = s.student_id
+     JOIN books b ON
+         br.book_id = b.book_id
+
+      WHERE br.borrow_return_date IS NULL
+      ORDER BY br.borrow_date DESC;
+      
