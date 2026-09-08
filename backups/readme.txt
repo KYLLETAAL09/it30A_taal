@@ -12,9 +12,9 @@ C:\Users\RON\Dev\IT30A\backups
 
     UTILITY Commands
     \! columns
-    mysqldump -u root -p --databases iy34_lab_db > C:\DEV-IT30A\it30a\it30A_taal\backups\08182026_library_db.sql
+    mysqldump -u root -p --databases library > C:\DEV-IT30A\it30a\it30A_taal\backups\08182026_library_db.sql
 
-    mysqldump -u root -p --databases iy34_lab_db > "C:\DEV-IT30A\it30a\it30A_taal\backups\%date:~-4%_%date:~4,2%_date:~7,2%_%time:~6,2%_library_db.sql"
+    mysqldump -u root -p --databases library_db > "C:\DEV-IT30A\it30a\it30A_taal\backups\%date:~-4%_%date:~4,2%_date:~7,2%_%time:~6,2%_library_db.sql"
 
     %date:~4%_
     %date:~4,2%_
