@@ -26,7 +26,9 @@ CREATE TABLE borrow(
 );
 
 INSERT INTO borrow (student_id,book_id) VALUES
-(1,2);
+(1,2),
+(2,1),
+(3,3);
 
 
 SELECT
