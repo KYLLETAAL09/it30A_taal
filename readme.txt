@@ -14,7 +14,7 @@ C:\Users\RON\Dev\IT30A\backups
     \! columns
     mysqldump -u root -p --databases library > C:\DEV-IT30A\it30a\it30A_taal\backups\08182026_library_db.sql
 
-    mysqldump -u root -p --databases library_db > "C:\DEV-IT30A\it30a\it30A_taal\backups\%date:~-4%_%date:~4,2%_date:~7,2%_%time:~6,2%_library_db.sql"
+    mysqldump -u root -p --databases it30a_lab_db > "D:\xampp\htdocs\it30A\it30A_taal\backups\%date:~-4%_%date:~4,2%_date:~7,2%_%time:~6,2%_it30a_lab_db.sql"
 
     %date:~4%_
     %date:~4,2%_
@@ -33,3 +33,5 @@ ALTER TABLE students MODIFY COLUMN student_created_at TIMESTAMP NOT NULL DEFAULT
 show TABLES
 Select * from
 describe students
+
+http://localhost/it30A/it30A_taal/index.php
