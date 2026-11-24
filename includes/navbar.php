@@ -124,3 +124,5 @@ function navActive($section,$currentSection){
         Borrow
         </a>
     </nav>
+
+</header>
