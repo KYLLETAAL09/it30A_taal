@@ -2,23 +2,23 @@
 $currentSection = $_GET['section'] ?? 'dashboard';
 
 function navActive($section,$currentSection){
-    return $section === $currentSection ? 'active' : '';
+    return $section ===  $currentSection ? 'active' : '';
 }
 
 ?>
 
 <!-- Material Icons -->
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
 
 <style>
     .app-header{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-botton: 2rem;
-        flex wrap: wrap;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
         gap: 1rem;
-        font-family: Roboto,system-ui, apple-system, sans-serif;
+        font-family: Roboto,system-ui, -apple-system, sans-serif;
     }
 
     .app-header h1{
@@ -31,13 +31,13 @@ function navActive($section,$currentSection){
         margin: 0;
     }
 
-    app.header h1 .material-icons{
+    .app-header h1 .material-icons{
         font-size: 2.2rem;
-        color #1976d2;
+        color: #1976d2;
     }
 
-    nav-links{
-        display: flex;\
+    .nav-links{
+        display: flex;
         gap: 0.25rem;
         background: transparent;
     }
@@ -51,24 +51,29 @@ function navActive($section,$currentSection){
         letter-spacing: 0.5px;
         padding: .6rem 1.2rem;
         border-radius: 4px;
-        transition: background-color 0.25, color0.2s;
+        transition: background-color 0.2s, color 0.2s;
         display: flex;
         align-items: center;
-        gap:.35rem;
+        gap: .35rem;
     }
 
-    .nav-links a .material-icon{
+    .nav-links a .material-icons{
         font-size: 1.2rem;
     }
 
-    .nav-links a:hover{
-        background-color: #1976d2;
+    .nav-links  a:hover{
+        background:#e3f2fd;
+        color:#1976d2;
+    }
+
+    .nav-links a.active{
+        background:#1976d2;
         color:white;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px 0 rgba(0,0,0.12), 0 1px 5px 0 rgba(0,0,0,2);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
     }
 
     .nav-links a.active .material-icons{
-        color: white;
+        color:white;
     }
 
     @media(max-width: 760px) {
@@ -84,47 +89,38 @@ function navActive($section,$currentSection){
         }
 
         .nav-links a{
-            flex: 1 0 auto;
-            text-align: center;
-        }
-        
-        .nav-links a{
             padding: .5rem .8rem;
             font-size: 0.8rem;
             white-space: nowrap;
-         }
+        }
     }
 
 </style>
 
- <header class="app-header">
+<header class="app-header">
     <h1>
-        <span class="material-icons">local_library</span>
-        Libary Dashboard
+        <span class="material-icons">local_library</span> 
+        Library Dashboard
     </h1>
 
     <nav class="nav-links">
-
-        <a href="index.php?section=dashboard" class="<?=  navActive('dashboard',$currentSection) ?>">
-            <span class="material-icons">dashboard</span>
-            Dashboard
+        <a href="index.php?section=dashboard" class="<?= navActive('dashboard',$currentSection) ?>">
+        <span class="material-icons">dashboard</span> 
+        Dashboard
         </a>
 
-        <a href="index.php?section=students" class="<?=  navActive('students',$currentSection) ?>">
-            <span class="material-icons">people</span>
-            Students
+        <a href="index.php?section=students" class="<?= navActive('students',$currentSection) ?>">
+        <span class="material-icons">people</span> 
+        Students
         </a>
 
-        <a href="index.php?section=books" class="<?=  navActive('books',$currentSection) ?>">
-            <span class="material-icons">menu_book</span>
-            Books
+        <a href="index.php?section=books" class="<?= navActive('books',$currentSection) ?>">
+        <span class="material-icons">menu_book</span> 
+        Books
         </a>
 
-        <a href="index.php?section=borrow" class="<?=  navActive('borrow',$currentSection) ?>">
-            <span class="material-icons">swap_horiz</span>
-            Borrow
+        <a href="index.php?section=borrow" class="<?= navActive('borrow',$currentSection) ?>">
+        <span class="material-icons">swap_horiz</span> 
+        Borrow
         </a>
-
     </nav>
-
- </header>
